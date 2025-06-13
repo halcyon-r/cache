@@ -1,4 +1,5 @@
 #!/bin/bash
+# 用来得到所有依赖组件的版本信息
 
 set -e
 set -x
@@ -135,3 +136,5 @@ include:
     version: $(curl -fsSL "https://api.github.com/repos/labring/sealos/releases/latest" | yq .tag_name | cut -dv -f2)
 EOF
 fi
+
+cat versions

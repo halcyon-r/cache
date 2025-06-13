@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 readonly IMAGE_NAME="$REGISTRY/$REPOSITORY-$MODULE:$VERSION"
 readonly ARCH_LIST="amd64 arm64"
@@ -119,7 +120,7 @@ Dockerfile() {
   local ALIAS_ARCH
   if ! [ -s modules.txt ]; then
     date >"$(hostname)"
-    until wget -qOmodules.txt "https://github.com/$REPOSITORY/raw/main/modules/modules.txt"; do
+    until wget -qOmodules.txt "https://github.com/$REPOSITORY/raw/main/modules/modules.txt"; do  # REPOSITORY是这个代码仓halcyon-r/cache
       sleep "$(($(grep -v ^$ -c "$(hostname)") * 2))s"
       date >>"$(hostname)"
     done

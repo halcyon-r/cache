@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 while IFS= read -r K8S_MD; do
   awk '{printf "{\"'kube'\":\"%s\",\"'arch'\":\"amd64\"},{\"'kube'\":\"%s\",\"'arch'\":\"arm64\"},",$1,$1}' <<<"${K8S_MD##*-}" >>CHANGELOG.md

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 BUILDARCH=$(arch)
 case $BUILDARCH in

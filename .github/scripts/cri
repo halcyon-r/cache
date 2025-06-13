@@ -9,6 +9,7 @@ arm64)
 esac
 
 set -e
+set -x
 
 checker_build="/tmp/checker.$(basename "$0")"
 source common

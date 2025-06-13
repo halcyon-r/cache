@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 checker_build="/tmp/checker.$(basename "$0")"
 source common

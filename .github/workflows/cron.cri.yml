@@ -24,5 +24,5 @@ jobs:
 name: cri
 on:
   schedule:
-    - cron: "* */8 * * *"
+    - cron: "* */24 * * *"
   workflow_dispatch:

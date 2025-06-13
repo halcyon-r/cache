@@ -2,7 +2,7 @@
 # 用来得到所有依赖组件的版本信息
 
 set -e
-set -x
+#set -x
 
 BUILDARCH=$(arch)
 case $BUILDARCH in
